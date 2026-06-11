@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Midnight Snack Games</title>
+<meta name="description" content="Cozy and mischievous mobile games for late-night play. Our first game is coming soon." />
+<link rel="icon" type="image/png" href="favicon.png" />
+<meta property="og:title" content="Midnight Snack Games" />
+<meta property="og:description" content="Cozy and mischievous mobile games for late-night play. Coming soon." />
+<meta property="og:image" content="og.png" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://midnightsnack.games" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --navy: #161f3c;
+    --navy-hi: #20305a;
+    --cream: #fff5dc;
+    --orange: #fda036;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    font-family: "Baloo 2", system-ui, sans-serif;
+    background: radial-gradient(circle at 50% 38%, var(--navy-hi), var(--navy) 70%);
+    color: var(--cream);
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 32px 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  .stars { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+  .star {
+    position: absolute;
+    background: var(--cream);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: twinkle 4s ease-in-out infinite;
+  }
+  @keyframes twinkle { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.85; } }
+  .content { position: relative; z-index: 1; max-width: 560px; }
+  .logo {
+    width: min(320px, 72vw);
+    height: auto;
+    filter: drop-shadow(0 12px 30px rgba(0,0,0,0.45));
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  h1 {
+    font-weight: 800;
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    letter-spacing: 0.5px;
+    margin-top: 8px;
+  }
+  h1 .snack { color: var(--orange); }
+  .tagline {
+    font-weight: 500;
+    font-size: clamp(1rem, 3.4vw, 1.25rem);
+    color: #c7cfe6;
+    margin-top: 14px;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    margin-top: 26px;
+    padding: 10px 20px;
+    border: 2px solid rgba(253,160,54,0.5);
+    border-radius: 999px;
+    color: var(--orange);
+    font-weight: 700;
+    font-size: 0.95rem;
+    letter-spacing: 0.6px;
+  }
+  .cta {
+    margin-top: 30px;
+    display: inline-block;
+    background: var(--orange);
+    color: #2a1c08;
+    font-weight: 800;
+    font-size: 1.05rem;
+    text-decoration: none;
+    padding: 14px 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 22px rgba(253,160,54,0.3);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .cta:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(253,160,54,0.42); }
+  footer {
+    position: relative;
+    z-index: 1;
+    margin-top: 44px;
+    color: #6f7aa0;
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+  footer a { color: #98a3c8; text-decoration: none; }
+  footer a:hover { color: var(--cream); }
+</style>
+</head>
+<body>
+  <div class="stars" id="stars"></div>
+  <div class="content">
+    <img class="logo" src="logo.png" alt="Midnight Snack Games" />
+    <h1>Midnight <span class="snack">Snack</span> Games</h1>
+    <p class="tagline">Cozy and mischievous little games,<br />made for late-night play.</p>
+    <div class="badge">First game coming soon</div>
+    <br />
+    <a class="cta" href="mailto:hello@midnightsnack.games?subject=Notify%20me%20about%20Midnight%20Snack%20Games">Get notified</a>
+  </div>
+  <footer>
+    &copy; 2026 Midnight Snack Games &middot; <a href="mailto:hello@midnightsnack.games">hello@midnightsnack.games</a>
+  </footer>
+  <script>
+    const layer = document.getElementById('stars');
+    const count = Math.min(70, Math.floor(window.innerWidth / 18));
+    for (let i = 0; i < count; i++) {
+      const s = document.createElement('div');
+      s.className = 'star';
+      const size = Math.random() * 2.5 + 1;
+      s.style.width = s.style.height = size + 'px';
+      s.style.left = Math.random() * 100 + 'vw';
+      s.style.top = Math.random() * 70 + 'vh';
+      s.style.animationDelay = (Math.random() * 4) + 's';
+      layer.appendChild(s);
+    }
+  </script>
+</body>
+</html>
