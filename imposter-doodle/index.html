@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Imposter Doodle: Party Game — draw together, catch the fake artist</title>
+<meta name="description" content="Offline pass-the-phone party game for 3–10 friends. Everyone draws the secret word together — except the imposter. Debate the doodle, vote out the fake artist!" />
+<link rel="icon" type="image/png" href="icon-192.png" />
+<meta name="theme-color" content="#f8f1dd" />
+<meta property="og:site_name" content="Imposter Doodle" />
+<meta property="og:title" content="Imposter Doodle: Party Game" />
+<meta property="og:description" content="One phone, one secret word — but the imposter must fake it! Draw together, debate the doodle, vote out the fake artist." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://midnightsnack.games/imposter-doodle/" />
+<meta property="og:image" content="https://midnightsnack.games/imposter-doodle/mascot-wave.png" />
+<meta name="twitter:card" content="summary" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Neucha&display=swap" rel="stylesheet" />
+<style>
+  :root { --ink: #3a3a3a; --paper: #f8f1dd; --card: #fffdf4; --accent: #f7c948; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Neucha', cursive;
+    background-color: var(--paper);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.23  0 0 0 0 0.21  0 0 0 0 0.17  0 0 0 0.055 0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)'/%3E%3C/svg%3E");
+    color: var(--ink);
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; padding: 44px 20px 28px; gap: 14px;
+  }
+  h1 {
+    font-family: 'Caveat', cursive; font-size: clamp(42px, 8vw, 64px);
+    line-height: 1; transform: rotate(-1.2deg); position: relative; display: inline-block; padding: 0 14px;
+  }
+  h1 .blob {
+    position: absolute; left: 0; right: 0; top: 14%; bottom: 8%;
+    background: var(--accent); opacity: .5; z-index: -1;
+    border-radius: 47% 53% 51% 49% / 62% 56% 44% 38%; transform: rotate(-1.6deg);
+  }
+  .tagline { font-size: 21px; opacity: .75; max-width: 460px; }
+  .mascot { height: 180px; width: auto; filter: drop-shadow(3px 4px 0 rgba(58,58,58,.16)); animation: bob 1.9s ease-in-out infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0) rotate(-3deg); } 50% { transform: translateY(-10px) rotate(3deg); } }
+  .how {
+    background: var(--card); border: 2.5px solid var(--ink);
+    border-radius: 145px 20px 185px 24px / 24px 195px 20px 165px;
+    box-shadow: 3px 4px 0 rgba(58,58,58,.16); transform: rotate(-.4deg);
+    padding: 18px 22px; max-width: 480px; font-size: 19px; line-height: 1.45;
+  }
+  .facts { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; font-size: 17px; }
+  .facts span {
+    border: 2px dashed rgba(58,58,58,.5); padding: 5px 13px;
+    border-radius: 22px 165px 26px 195px / 185px 24px 155px 22px; transform: rotate(.4deg);
+  }
+  .stores { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
+  /* Стор-бейджи: пока «скоро», после релиза заменить span→a с href на листинги */
+  .stores .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--ink); color: var(--paper); text-decoration: none;
+    font-size: 19px; padding: 12px 20px; opacity: .55;
+    border-radius: 18px 225px 18px 255px / 255px 18px 225px 18px;
+  }
+  footer { margin-top: auto; padding-top: 26px; font-size: 15px; opacity: .65; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+  footer a { color: var(--ink); }
+</style>
+</head>
+<body>
+  <img class="mascot" src="mascot-wave.png" alt="Imposter Doodle mascot" />
+  <h1><span class="blob"></span>Imposter Doodle</h1>
+  <p class="tagline">One phone, one secret word — but the imposter must fake it!</p>
+  <div class="how">
+    Gather 3–10 friends around one phone. Everyone adds one stroke to the same doodle —
+    except the imposter, who only knows the category and has to fake it. Debate the drawing,
+    vote out the fake artist… but a caught imposter can still steal the win by guessing the word!
+  </div>
+  <div class="facts">
+    <span>📵 100% offline</span>
+    <span>📱 One phone</span>
+    <span>👥 3–10 players</span>
+    <span>🌍 EN · RU · UK</span>
+  </div>
+  <div class="stores">
+    <!-- после релиза: <a class="badge" href="https://apps.apple.com/app/id6786332454">App Store</a> -->
+    <span class="badge" id="badge-appstore">️ App Store — coming soon</span>
+    <span class="badge" id="badge-play">▶ Google Play — coming soon</span>
+  </div>
+  <footer>
+    <a href="/imposter-doodle/privacy/">Privacy Policy</a>
+    <a href="mailto:hello@midnightsnack.games">hello@midnightsnack.games</a>
+    <a href="/">Midnight Snack Games</a>
+  </footer>
+</body>
+</html>

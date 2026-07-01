@@ -47,7 +47,7 @@
     <li><strong>Game settings &amp; local progress</strong> (chosen language, selected word pack) are stored on your device. Purchase entitlements may also be validated and restored through RevenueCat (see below).</li>
     <li><strong>Purchase information.</strong> If you buy a word pack or the “unlock all” bundle, the purchase is processed by Apple or Google. We use <strong>RevenueCat</strong> to validate, store, and restore purchase entitlements; it processes a randomly generated app user ID, your purchase history, and device/OS identifiers.</li>
     <li><strong>Usage &amp; diagnostics (Google Firebase / Google Analytics).</strong> App events (e.g., a round started/finished, a pack previewed or purchased), app version, device model, operating system, language, coarse region, crash logs, and app-generated/device identifiers.</li>
-    <li><strong>Marketing attribution (AppsFlyer).</strong> If you install the Game after seeing an ad or a creator link, we collect the install source and, where permitted, your advertising identifier, to measure our own campaigns.</li>
+    <li><strong>Marketing attribution (AppsFlyer).</strong> If you install the Game after seeing an ad or a creator link, we collect the install source to measure our own campaigns. On Android this may include your device’s advertising ID (GAID). On iOS we do <strong>not</strong> collect the advertising identifier (IDFA) — attribution relies on Apple’s privacy-preserving, aggregated SKAdNetwork reports.</li>
   </ul>
   <p>We do not knowingly collect real names, email addresses, precise location, photos, or contacts.</p>
 
@@ -60,7 +60,7 @@
   </ul>
 
   <h2>Legal bases (EEA/UK)</h2>
-  <p>Where GDPR applies, we rely on: <strong>performance of a contract</strong> for providing the Game and processing/restoring purchases; <strong>your consent</strong> for analytics and marketing attribution that use your advertising identifier (requested via Apple’s App Tracking Transparency where required) — which you may withdraw at any time; and our <strong>legitimate interests</strong> in crash diagnostics, security/fraud prevention, and improving the Game.</p>
+  <p>Where GDPR applies, we rely on: <strong>performance of a contract</strong> for providing the Game and processing/restoring purchases; <strong>your consent</strong> for analytics and, on Android, marketing attribution that uses your advertising identifier — which you may withdraw at any time (see “Your choices” below); and our <strong>legitimate interests</strong> in crash diagnostics, security/fraud prevention, and improving the Game. On iOS, attribution uses only aggregated SKAdNetwork data without your advertising identifier.</p>
 
   <h2>Service providers &amp; international transfers</h2>
   <p>We share limited data with providers who process it on our behalf: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple App Store</a> and <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Play</a> (purchases), <a href="https://www.revenuecat.com/privacy/" target="_blank" rel="noopener">RevenueCat</a> (purchase management), <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Google Firebase / Google Analytics</a> (analytics &amp; crash reporting), and <a href="https://www.appsflyer.com/legal/services-privacy-policy/" target="_blank" rel="noopener">AppsFlyer</a> (marketing attribution, including install source and advertising identifier where permitted). For EEA/UK users, transfers outside the EEA/UK rely on adequacy decisions or Standard Contractual Clauses with supplementary measures where required. Each provider handles data under its own privacy policy.</p>
@@ -70,8 +70,9 @@
 
   <h2>Your choices &amp; rights</h2>
   <ul>
-    <li>On iOS, we ask for your permission before any tracking that uses your advertising identifier; you can decline, and you can change this anytime in your device settings.</li>
-    <li>You can reset or limit your advertising identifier in your device settings.</li>
+    <li><strong>In-app:</strong> you can turn off analytics anytime in the Game’s Settings — this also stops attribution events from your device.</li>
+    <li>On iOS, the Game does not use your advertising identifier at all, so no tracking permission is requested — there is nothing to opt out of.</li>
+    <li>On Android, you can reset or delete your advertising identifier in your device settings.</li>
     <li>Because Imposter Doodle is an offline mobile app (not a website), it does not respond to browser “Do Not Track” signals; use your device’s ad-tracking controls to limit tracking.</li>
     <li>Depending on where you live (e.g., EEA/UK under GDPR, California under CCPA/CPRA), you may have the right to access, correct, delete, restrict, or port your data, to object to certain processing, and to withdraw consent where processing is based on consent. You also have the right to lodge a complaint with your local data protection authority.</li>
     <li><strong>To exercise a right</strong>, email <a href="mailto:hello@midnightsnack.games">hello@midnightsnack.games</a> with your request and, if available, your device or app user ID; we may need information to verify your request.</li>
