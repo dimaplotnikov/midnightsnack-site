@@ -52,19 +52,6 @@
     border: 2px dashed rgba(58,58,58,.5); padding: 5px 13px;
     border-radius: 22px 165px 26px 195px / 185px 24px 155px 22px; transform: rotate(.4deg);
   }
-  .shots {
-    display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
-    max-width: 100%; padding: 8px 6px 14px; -webkit-overflow-scrolling: touch;
-  }
-  .shots img {
-    width: clamp(150px, 42vw, 168px); height: auto; flex: 0 0 auto;
-    scroll-snap-align: center; background: #fffdf4;
-    border: 2.5px solid var(--ink);
-    border-radius: 12px 34px 14px 38px / 36px 12px 32px 14px;
-    box-shadow: 3px 4px 0 rgba(58,58,58,.16);
-  }
-  .shots img:nth-child(odd) { transform: rotate(-0.8deg); }
-  .shots img:nth-child(even) { transform: rotate(0.8deg); }
   .stores { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 6px; }
   /* Стор-бейджи: пока «скоро», после релиза заменить span→a с href на листинги */
   .stores .badge {
@@ -91,12 +78,6 @@
     <span>📱 One phone</span>
     <span>👥 3–10 players</span>
     <span>🚫 No ads</span>
-  </div>
-  <div class="shots">
-    <img src="shots/1-draw.webp" alt="Everyone draws one stroke of the secret word" loading="lazy" />
-    <img src="shots/2-role.webp" alt="You are the imposter — blend in!" loading="lazy" />
-    <img src="shots/3-vote.webp" alt="Vote out the fake artist" loading="lazy" />
-    <img src="shots/6-gallery.webp" alt="Doodle gallery and replays" loading="lazy" />
   </div>
   <div class="stores">
     <!-- после релиза: <a class="badge" href="https://apps.apple.com/app/id6786332454">App Store</a> -->
