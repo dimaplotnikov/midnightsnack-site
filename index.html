@@ -4,12 +4,12 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Midnight Snack Games</title>
-<meta name="description" content="Cozy and mischievous mobile games for late-night play. Our first game is coming soon." />
+<meta name="description" content="Cozy and mischievous mobile games for late-night play. First up: Imposter Doodle — the one-phone party drawing game." />
 <link rel="icon" type="image/png" href="favicon.png" />
 <meta name="theme-color" content="#1c2335" />
 <meta property="og:site_name" content="Midnight Snack Games" />
 <meta property="og:title" content="Midnight Snack Games" />
-<meta property="og:description" content="Cozy and mischievous mobile games for late-night play. Coming soon." />
+<meta property="og:description" content="Cozy and mischievous mobile games for late-night play. First up: Imposter Doodle — the one-phone party drawing game." />
 <meta property="og:image" content="https://midnightsnack.games/og.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://midnightsnack.games" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Midnight Snack Games" />
-<meta name="twitter:description" content="Cozy and mischievous mobile games for late-night play. Coming soon." />
+<meta name="twitter:description" content="Cozy and mischievous mobile games for late-night play. First up: Imposter Doodle — the one-phone party drawing game." />
 <meta name="twitter:image" content="https://midnightsnack.games/og.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,16 +76,41 @@
     margin-top: 14px;
     line-height: 1.5;
   }
-  .badge {
+  .game-card {
+    display: block;
+    margin-top: 30px;
+    padding: 22px 24px 26px;
+    background: rgba(255,245,220,0.06);
+    border: 2px solid rgba(253,160,54,0.45);
+    border-radius: 22px;
+    text-decoration: none;
+    color: var(--cream);
+    transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .game-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--orange);
+    background: rgba(255,245,220,0.09);
+  }
+  .game-card .mascot {
+    width: 96px;
+    height: auto;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.35));
+  }
+  .game-card h2 { font-size: 1.5rem; font-weight: 800; margin-top: 10px; }
+  .game-card h2 .accent { color: var(--orange); }
+  .game-card p { color: #c7cfe6; font-size: 1rem; margin-top: 6px; line-height: 1.45; }
+  .game-card .facts { margin-top: 12px; color: #98a3c8; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.3px; }
+  .game-card .go {
     display: inline-block;
-    margin-top: 26px;
-    padding: 10px 20px;
-    border: 2px solid rgba(253,160,54,0.5);
-    border-radius: 999px;
-    color: var(--orange);
-    font-weight: 700;
-    font-size: 0.95rem;
-    letter-spacing: 0.6px;
+    margin-top: 16px;
+    background: var(--orange);
+    color: #2a1c08;
+    font-weight: 800;
+    font-size: 1rem;
+    padding: 11px 24px;
+    border-radius: 14px;
+    box-shadow: 0 8px 22px rgba(253,160,54,0.3);
   }
   .cta {
     margin-top: 30px;
@@ -119,9 +144,13 @@
     <img class="logo" src="logo.png" alt="Midnight Snack Games" />
     <h1>Midnight <span class="snack">Snack</span> Games</h1>
     <p class="tagline">Cozy and mischievous little games,<br />made for late-night play.</p>
-    <div class="badge">First game coming soon</div>
-    <br />
-    <a class="cta" href="mailto:hello@midnightsnack.games?subject=Notify%20me%20about%20Midnight%20Snack%20Games">Get notified</a>
+    <a class="game-card" href="/imposter-doodle/">
+      <img class="mascot" src="/imposter-doodle/mascot-wave.png" alt="Imposter Doodle mascot" />
+      <h2>Imposter <span class="accent">Doodle</span></h2>
+      <p>One phone, one secret word — but the imposter must fake it!<br />The pass-the-phone party drawing game.</p>
+      <div class="facts">📵 offline &nbsp;·&nbsp; 📱 one phone &nbsp;·&nbsp; 👥 3–10 players</div>
+      <span class="go">Meet the game →</span>
+    </a>
   </div>
   <footer>
     &copy; 2026 Midnight Snack Games &middot; <a href="mailto:hello@midnightsnack.games">hello@midnightsnack.games</a>
