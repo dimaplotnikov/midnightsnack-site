@@ -1,4 +1,4 @@
-/* Website-only GA4 stream. No advertising signals; load only after consent. */
+/* Daily totals without identifiers; optional GA4/AppsFlyer only after consent. */
 (() => {
   'use strict';
   const measurementId = 'G-LZHC3HZ6XX';
@@ -19,6 +19,25 @@
     const value = query.get(key);
     if (value && /^[a-zA-Z0-9_-]{1,100}$/.test(value)) pageUrl.searchParams.set(key, value);
   }
+  const tags = pageUrl.searchParams;
+  const bucket = tags.get('utm_campaign') === 'attribution_qa_20260917' ? 'qa'
+    : tags.get('utm_source') === 'tiktok' && tags.get('utm_medium') === 'paid_social'
+      && tags.get('utm_campaign') === 'launch_us_v1' && tags.get('utm_content') === 'brett_v2'
+      ? 'tiktok_launch_us_brett_v2'
+      : tags.size ? 'other_campaign' : 'direct';
+  function count(event) {
+    if (privacySignal) return;
+    try {
+      // Two fixed labels only: no cookies, IDs, full URL, referrer or raw UTMs.
+      // Keepalive allows a store navigation to proceed immediately; never retry.
+      fetch('https://imposter-site-counter.imposter-site-counter.workers.dev/count', {
+        method: 'POST', headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ event, bucket }), credentials: 'omit',
+        mode: 'cors', cache: 'no-store', keepalive: true, referrerPolicy: 'no-referrer',
+      }).catch(() => {});
+    } catch { /* Counting must never interfere with the page or store links. */ }
+  }
+  count('page_view');
   const storeLinks = [
     ['badge-appstore', 'id6786332454'],
     ['badge-play', 'com.imposterdoodle.game'],
@@ -55,15 +74,24 @@
 
   function gtag() { window.dataLayer.push(arguments); }
 
+  function syncPanelSpace() {
+    const height = panel.hidden ? 0 : Math.ceil(panel.getBoundingClientRect().height);
+    document.documentElement.style.setProperty('--analytics-inset', height + 'px');
+  }
+  if (typeof ResizeObserver !== 'undefined') new ResizeObserver(syncPanelSpace).observe(panel);
+  window.addEventListener('resize', syncPanelSpace);
+
   function showChoice() {
     previousFocus = document.activeElement;
     panel.hidden = false;
     settings.setAttribute('aria-expanded', 'true');
+    syncPanelSpace();
   }
 
   function hideChoice() {
     panel.hidden = true;
     settings.setAttribute('aria-expanded', 'false');
+    syncPanelSpace();
     if (previousFocus === settings) settings.focus();
   }
 
@@ -154,7 +182,9 @@
     ['badge-play', 'play_store_click', 'google_play'],
   ]) {
     document.getElementById(id).addEventListener('click', (e) => {
-      if (!enabled || e.defaultPrevented) return;
+      if (e.defaultPrevented) return;
+      count(event);
+      if (!enabled) return;
       const link = e.currentTarget;
       const normalNavigation = e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey && !link.target;
       const params = { send_to: measurementId, store, link_url: link.href };
@@ -172,6 +202,9 @@
         params.event_timeout = 600;
       }
       gtag('event', event, params);
+    });
+    document.getElementById(id).addEventListener('auxclick', (e) => {
+      if (e.button === 1 && !e.defaultPrevented) count(event);
     });
   }
 })();
