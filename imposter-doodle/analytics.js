@@ -2,7 +2,8 @@
 (() => {
   'use strict';
   const measurementId = 'G-LZHC3HZ6XX';
-  const choiceKey = 'imposter-site-analytics-v1';
+  // Ask again when expanding consent from website-only GA to install attribution.
+  const choiceKey = 'imposter-site-analytics-v2';
   const panel = document.getElementById('analytics-choice');
   const settings = document.getElementById('analytics-settings');
   const privacySignal = navigator.globalPrivacyControl === true || navigator.doNotTrack === '1';
@@ -17,6 +18,33 @@
   for (const key of ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content']) {
     const value = query.get(key);
     if (value && /^[a-zA-Z0-9_-]{1,100}$/.test(value)) pageUrl.searchParams.set(key, value);
+  }
+  const storeLinks = [
+    ['badge-appstore', 'id6786332454'],
+    ['badge-play', 'com.imposterdoodle.game'],
+  ].map(([id, appId]) => {
+    const element = document.getElementById(id);
+    return { element, appId, directUrl: element.href };
+  });
+
+  function updateStoreLinks(allow) {
+    const source = pageUrl.searchParams.get('utm_source');
+    const campaign = pageUrl.searchParams.get('utm_campaign');
+    const medium = pageUrl.searchParams.get('utm_medium');
+    const creative = pageUrl.searchParams.get('utm_content');
+    for (const { element, appId, directUrl } of storeLinks) {
+      element.href = directUrl;
+      if (!allow || !source || !campaign) continue;
+      // Separate platform links preserve the store the visitor actually selected,
+      // including on desktop. No click IDs, user IDs or arbitrary URL forwarding.
+      const url = new URL('https://app.appsflyer.com/' + appId);
+      url.searchParams.set('pid', source === 'tiktok' && medium === 'paid_social'
+        ? 'tiktok_promote_site' : 'website_' + source);
+      url.searchParams.set('c', campaign);
+      if (medium) url.searchParams.set('af_channel', medium);
+      if (creative) url.searchParams.set('af_ad', creative);
+      element.href = url.href;
+    }
   }
   let referrer = '';
   try { referrer = new URL(document.referrer).origin; } catch { /* Direct visit. */ }
@@ -57,6 +85,7 @@
 
   function start() {
     enabled = true;
+    updateStoreLinks(true);
     window['ga-disable-' + measurementId] = false;
     if (!started) {
       started = true;
@@ -95,6 +124,7 @@
       start();
     } else {
       enabled = false;
+      updateStoreLinks(false);
       window['ga-disable-' + measurementId] = true;
       if (started) gtag('consent', 'update', { analytics_storage: 'denied' });
       clearCookies();
