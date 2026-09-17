@@ -85,12 +85,14 @@
     previousFocus = document.activeElement;
     panel.hidden = false;
     settings.setAttribute('aria-expanded', 'true');
+    settings.textContent = 'Close analytics settings';
     syncPanelSpace();
   }
 
   function hideChoice() {
     panel.hidden = true;
     settings.setAttribute('aria-expanded', 'false');
+    settings.textContent = 'Analytics settings';
     syncPanelSpace();
     if (previousFocus === settings) settings.focus();
   }
@@ -162,6 +164,10 @@
 
   settings.hidden = false;
   settings.addEventListener('click', () => {
+    if (!panel.hidden) {
+      hideChoice();
+      return;
+    }
     showChoice();
     document.getElementById('analytics-decline').focus();
   });
