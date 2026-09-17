@@ -121,7 +121,7 @@
 
   for (const [id, event, store] of [
     ['badge-appstore', 'app_store_click', 'app_store'],
-    ['badge-play', 'google_play_click', 'google_play'],
+    ['badge-play', 'play_store_click', 'google_play'],
   ]) {
     document.getElementById(id).addEventListener('click', (e) => {
       if (!enabled || e.defaultPrevented) return;
