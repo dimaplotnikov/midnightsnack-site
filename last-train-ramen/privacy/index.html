@@ -38,10 +38,10 @@
 <body>
 <div class="wrap">
   <h1>Privacy Policy</h1>
-  <p class="meta">Last Train Ramen · Midnight Snack Games · Last updated: September 25, 2026</p>
+  <p class="meta">Last Train Ramen · Midnight Snack Games · Last updated: November 24, 2026</p>
 
   <div class="card">
-    <p><strong>Short version:</strong> Last Train Ramen is a single-player cooking game. You don’t create an account, and we never ask for your name, email or contacts. Your progress is stored on your device (and, if you sign in, in your own Google Play Games or iCloud account). The Game sends anonymous gameplay analytics (GameAnalytics) and crash reports (Sentry), and sends in-app purchase receipts to our server to verify them. It does not show ads and does not collect your advertising identifier. Each service is described below. We do not sell your personal information.</p>
+    <p><strong>Short version:</strong> Last Train Ramen is a single-player cooking game. You don’t create an account, and we never ask for your name, email or contacts. Your progress is stored on your device (and, if you sign in, in your own Google Play Games or iCloud account). The Game sends pseudonymous gameplay statistics (GameAnalytics and, on Android, Google Analytics for Firebase) and crash reports (Sentry and, on Android, Firebase Crashlytics), and sends in-app purchase receipts to our server to verify them. You can switch statistics and crash reports off at any time in <strong>Settings → Statistics → Off</strong>. In the EEA, the UK and Switzerland, statistics are sent only after you agree. The current version does not show ads and does not collect your advertising identifier. Each service is described below. We do not sell your personal information.</p>
   </div>
 
   <h2>Who we are</h2>
@@ -54,17 +54,23 @@
     <li><strong>Game settings file.</strong> The Game occasionally downloads a small settings file from our website (midnightsnack.games) so we can switch features off or ask you to update if a version has a serious bug. The request contains no information about you or your game. As with any web request, our hosting provider (GitHub Pages) receives your IP address and standard request details (such as the version of the web engine the Game runs in) to deliver the file, and may keep them in its server logs; we do not receive or store them.</li>
     <li><strong>Google Play features (Android).</strong> The Game may ask Google Play to show a rating prompt or to offer an update. These features are provided by Google Play under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a>; we do not receive any data from them.</li>
   </ul>
-  <p>We do not collect real names, email addresses, precise location, photos, contacts or advertising identifiers.</p>
+  <p>We do not collect real names, email addresses, precise location, text you type, photos, contacts, your saved game or advertising identifiers.</p>
 
   <h2>Services the Game uses</h2>
-  <p class="status">Currently active: crash reports (Sentry), gameplay analytics (GameAnalytics), cloud save (Google Play Games / iCloud) and in-app purchases. Video ads (Google AdMob) are off.</p>
+  <p class="status">Currently active: gameplay statistics (GameAnalytics; Google Analytics for Firebase on Android), crash reports (Sentry; Firebase Crashlytics on Android), cloud save (Google Play Games / iCloud) and in-app purchases. Video ads (Google AdMob) are off.</p>
   <p>If a future update turns on a service that is off, or changes what an active one sends, we will update this page and the store listing’s data disclosures before that update is released, and the “Last updated” date above will change.</p>
 
-  <h3>Crash reports (Sentry)</h3>
-  <p>When the Game crashes we receive the error message, the technical stack trace, the names of the last in-game actions (for example, “night started”, without any details), the Game’s version and the time. Crash reports contain no account, name or advertising identifier. Sentry receives your IP address in order to deliver the report; we configure it not to store it. Crash reports are kept for up to 30 days. See <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry’s Privacy Policy</a>.</p>
+  <h3>Gameplay statistics (GameAnalytics, Google Analytics for Firebase)</h3>
+  <p><strong>What is collected.</strong> A random installation identifier created by the Game, and on Android also the Firebase app-instance identifier. Neither is linked to your name, account or advertising ID. Together with it: your device model, operating system version, the Game’s language, your phone’s language and region setting, the Game’s version and, if the Game was installed from a store link with a campaign tag, the name of that campaign. Gameplay events: how long you play, which nights and tutorials you start and finish, how long a dish takes, where a cooking gesture fails, how fast you skip dialogue, how smoothly the Game runs on your device, items bought with in-game coins, and purchases of seals with their price and currency. Both services receive your IP address in order to deliver the events and use it to work out your country and region (approximate location).</p>
+  <p><strong>Why.</strong> To understand which parts of the Game players enjoy, where they get stuck and when they stop playing, so we can fix and improve the Game.</p>
+  <p><strong>Who processes it.</strong> GameAnalytics ApS (Denmark) and Google LLC (Google Analytics for Firebase), as our service providers. We also export the raw Firebase events to our own Google BigQuery project. See <a href="https://gameanalytics.com/privacy/" target="_blank" rel="noopener">GameAnalytics’ Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy and Security in Firebase</a>.</p>
+  <p><strong>Consent in the EEA, the UK and Switzerland.</strong> There, statistics are sent only after you agree: by switching <strong>Settings → Statistics</strong> to <strong>On</strong>, or in Google’s consent form if the Game shows one. Until then, events stay on your device and are not sent.</p>
 
-  <h3>Gameplay analytics (GameAnalytics)</h3>
-  <p>Anonymous gameplay events (a night started or ended, an item bought with in-game coins, a tutorial finished), a random installation identifier created by the Game (not your advertising ID), your device model, operating system version, language, the Game’s version and, if the Game was installed from a store link with a campaign tag, the name of that campaign. GameAnalytics receives your IP address in order to deliver the events. We use it to understand which parts of the Game players enjoy or find confusing. See <a href="https://gameanalytics.com/privacy/" target="_blank" rel="noopener">GameAnalytics’ Privacy Policy</a>.</p>
+  <h3>Crash reports (Sentry, Firebase Crashlytics)</h3>
+  <p>When the Game crashes or stops responding we receive the error message, the technical stack trace, the names of the last in-game actions (for example, “night started”, without any details), on Android the current night and screen, your device model and operating system version, the Game’s version and the time. On Android, Firebase Crashlytics also creates its own random installation identifier. Crash reports contain no account, name or advertising identifier. Both services receive your IP address in order to deliver the report; we configure Sentry not to store it. We use crash reports to find and fix bugs. See <a href="https://sentry.io/privacy/" target="_blank" rel="noopener">Sentry’s Privacy Policy</a> and <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Privacy and Security in Firebase</a>.</p>
+
+  <h3>How to switch statistics off</h3>
+  <p>Open <strong>Settings</strong> in the Game and set <strong>Statistics</strong> to <strong>Off</strong>. From that moment the Game sends no gameplay statistics and no crash reports to GameAnalytics, Google Analytics for Firebase, Sentry or Firebase Crashlytics, and it deletes the statistics that are still waiting on your device to be sent. You can switch it back on at any time. Switching off does not delete data that was already sent; to ask for that, see “Your choices &amp; rights” below.</p>
 
   <h3>Optional video ads (Google AdMob) <span class="off">— off</span></h3>
   <p>If enabled: the Game shows a video ad only when you choose to watch one for an in-game bonus. Google’s ad service then processes your device’s advertising identifier, IP address (approximate location) and ad interactions to show and measure the ad. In the UK and EEA we ask for your consent first through Google’s consent form, and you can change your choice at any time in the Game’s Settings. See <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">how Google uses information from apps that use its services</a>.</p>
@@ -73,33 +79,34 @@
   <p>Only if you sign in (Google Play Games on Android, iCloud on iPhone): a copy of your game progress is stored in your own Google Play Games or iCloud account so you can continue on another device. We do not receive your account details or the copy itself. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a> and <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple’s Privacy Policy</a>.</p>
 
   <h3>In-app purchases</h3>
-  <p>Purchases are processed by Google Play or the Apple App Store. We receive a purchase confirmation needed to deliver what you bought; we never receive your payment details. To stop fake purchases and to take back currency from refunded ones, the game sends the store's purchase token (or transaction id) and the product id to our purchase-check server (Cloudflare Workers, <code>ltr-purchases.imposter-site-counter.workers.dev</code>), which asks Google Play or Apple about it. The server keeps no account and no device id; it stores only a one-way hash of tokens that were refunded, for about 14 months.</p>
+  <p>Purchases are processed by Google Play or the Apple App Store. We receive a purchase confirmation needed to deliver what you bought; we never receive your payment details. To stop fake purchases and to take back currency from refunded ones, the game sends the store's purchase token (or transaction id) and the product id to our purchase-check server (Cloudflare Workers, <code>ltr-purchases.imposter-site-counter.workers.dev</code>), which asks Google Play or Apple about it. The server keeps no account and no device id; it stores only a one-way hash of tokens that were refunded, for about 14 months. If statistics are on, the price and currency of a purchase are also sent as a gameplay statistic (see above).</p>
 
   <h2>How we use information</h2>
   <ul>
     <li>To provide the Game and keep it stable.</li>
-    <li>To fix crashes and to understand how the Game is played and improve it (Sentry, GameAnalytics).</li>
+    <li>To fix crashes (Sentry, Firebase Crashlytics) and to understand how the Game is played and improve it (GameAnalytics, Google Analytics for Firebase).</li>
     <li>To deliver what you buy and to stop fake or refunded purchases (our purchase-check server).</li>
   </ul>
 
   <h2>Legal bases (EEA/UK)</h2>
-  <p>Where GDPR applies, we rely on our <strong>legitimate interests</strong> in keeping the Game working (the settings file), in crash diagnostics and anonymous gameplay analytics, and in preventing purchase fraud; on the <strong>performance of our contract</strong> with you to deliver what you buy; and, if video ads are ever turned on, on <strong>your consent</strong> for personalised advertising, collected through Google’s consent form, which you may withdraw at any time.</p>
+  <p>Where GDPR applies, we rely on <strong>your consent</strong> for gameplay statistics, which you give and withdraw in <strong>Settings → Statistics</strong>; on our <strong>legitimate interests</strong> in keeping the Game working (the settings file), in crash diagnostics and in preventing purchase fraud; on the <strong>performance of our contract</strong> with you to deliver what you buy; and, if video ads are ever turned on, on <strong>your consent</strong> for personalised advertising, collected through Google’s consent form, which you may withdraw at any time.</p>
 
   <h2>Service providers &amp; international transfers</h2>
-  <p>We share limited data only with providers that process it on our behalf and only for the services that are active: GitHub (website hosting), Google Play and the Apple App Store, Sentry (crash reports), GameAnalytics (gameplay analytics), Cloudflare (our purchase-check server) and — only if video ads are ever turned on — Google AdMob. Each processes data under its own privacy policy. For EEA/UK users, transfers outside the EEA/UK rely on adequacy decisions or Standard Contractual Clauses.</p>
+  <p>We share limited data only with providers that process it on our behalf and only for the services that are active: GitHub (website hosting), Google Play and the Apple App Store, Google (Google Analytics for Firebase, Firebase Crashlytics and BigQuery), Sentry (crash reports), GameAnalytics (gameplay statistics), Cloudflare (our purchase-check server) and — only if video ads are ever turned on — Google AdMob. Each processes data under its own privacy policy. For EEA/UK users, transfers outside the EEA/UK rely on adequacy decisions or Standard Contractual Clauses.</p>
 
   <h2>Your choices &amp; rights</h2>
   <ul>
+    <li>Switch statistics and crash reports off in <strong>Settings → Statistics → Off</strong> (see above).</li>
     <li>Uninstalling the Game deletes all progress stored on your device.</li>
     <li>Depending on where you live (for example, the EEA/UK under GDPR, or California under CCPA/CPRA), you may have the right to access, correct, delete, restrict or port your data, to object to certain processing and to withdraw consent. You also have the right to lodge a complaint with your local data protection authority.</li>
-    <li><strong>To exercise a right</strong>, email <a href="mailto:hello@midnightsnack.games">hello@midnightsnack.games</a>. Because the Game has no accounts, we may ask for details that help us find data linked to your installation.</li>
+    <li><strong>To exercise a right or to ask us to delete your data</strong>, email <a href="mailto:hello@midnightsnack.games">hello@midnightsnack.games</a>. Because the Game has no accounts, we may ask for details that help us find data linked to your installation (for example, your device model and the dates you played). We then delete it from GameAnalytics, Google Analytics for Firebase, Firebase Crashlytics, Sentry and our BigQuery export.</li>
   </ul>
 
   <h2>Children</h2>
   <p>The Game is intended for players aged 13 and over and is not directed to children under 13. We do not knowingly collect personal information from children. If we learn that we have collected personal information from a child under 13, we will delete it.</p>
 
   <h2>Data retention</h2>
-  <p>Data on your device stays there until you delete the Game or clear its data. Crash reports are kept for up to 30 days; analytics are kept only as long as needed to improve the Game, then deleted or aggregated; refunded-purchase hashes are kept for about 14 months. To ask us to delete analytics or crash data linked to your installation, email <a href="mailto:hello@midnightsnack.games">hello@midnightsnack.games</a>.</p>
+  <p>Data on your device stays there until you delete the Game or clear its data. Sentry crash reports are kept for up to 30 days and Firebase Crashlytics reports for up to 90 days. Google Analytics for Firebase keeps event-level data for up to 14 months; the raw events in our BigQuery export are deleted after 60 days. GameAnalytics data is kept only as long as needed to improve the Game, then deleted or aggregated. Refunded-purchase hashes are kept for about 14 months. To ask us to delete statistics or crash data linked to your installation, email <a href="mailto:hello@midnightsnack.games">hello@midnightsnack.games</a>.</p>
 
   <h2>Changes to this policy</h2>
   <p>We may update this policy from time to time. Changes will be reflected by updating the “Last updated” date on this page.</p>
